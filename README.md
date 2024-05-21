@@ -1,0 +1,1 @@
+Mandatory Java 21
