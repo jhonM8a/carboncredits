@@ -11,7 +11,8 @@ public class MainWindow extends JFrame {
     Line[] lines;
     public MainWindow(MainPanel mainPanel) {
         this.mainPanel = mainPanel;
-        setTitle("Dibujar");
+
+        setTitle("Carbon Case");
         setSize(1200, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.repaint();

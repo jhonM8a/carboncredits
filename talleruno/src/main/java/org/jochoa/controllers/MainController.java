@@ -17,9 +17,11 @@ public class MainController {
         //Panel para imagen
         ImagePanel imagePanel = new ImagePanel();
 
+
         mainPanel = new MainPanel(imagePanel);
 
         mainWindow = new MainWindow(mainPanel);
+
         mainWindow.add(imagePanel);
         mainWindow.setVisible(true);
 
