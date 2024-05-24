@@ -43,7 +43,7 @@ public class ImagePanel extends JPanel {
             g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
         }
         if(nameShape != null){
-            if(squareList !=null && count<=2 && nameShape.equals("square")){
+            if(squareList !=null && count<=2){
                 for (Square square : squareList) {
                     g.setColor(square.getColor());
                     g.drawRect(square.getStart().getX(), square.getStart().getY(), square.getSide(), square.getSide());
@@ -53,7 +53,7 @@ public class ImagePanel extends JPanel {
                 }
             }
 
-            if(circleList !=null && count<=2 && nameShape.equals("circle")){
+            if(circleList !=null && count<=2){
                 System.out.println(count);
                 for (Circle circle : circleList) {
                     g.setColor(circle.getColor());
