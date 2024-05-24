@@ -14,14 +14,13 @@ import java.io.IOException;
 public class ActionImage extends Action{
 
 
-    ImagePanel imagePanel;
+
     public ActionImage(ImagePanel imagePanel){
-        this.imagePanel = imagePanel;
+        super(imagePanel);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Llegue perros");
         JFileChooser fileChooser = new JFileChooser();
         int result = fileChooser.showOpenDialog(null);
 
@@ -29,7 +28,7 @@ public class ActionImage extends Action{
             File selectedFile = fileChooser.getSelectedFile();
             try {
                 BufferedImage images = ImageIO.read(selectedFile);
-                imagePanel.setBackgroundImage(images);
+                 super.getImagePanel().setBackgroundImage(images);
 
             } catch (IOException ex) {
                 ex.printStackTrace();

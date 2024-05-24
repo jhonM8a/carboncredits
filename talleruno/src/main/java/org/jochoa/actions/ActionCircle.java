@@ -6,16 +6,17 @@ import org.jochoa.views.ImagePanel;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
-public class ActionSquare extends Action{
-
-
-    public ActionSquare(ImagePanel imagePanel){
+public class ActionCircle extends Action{
+    public ActionCircle(ImagePanel imagePanel) {
         super(imagePanel);
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        super.getImagePanel().setNameShape("square");
-        super.showMessageRequestInput(Constant.MESSAGE_SQUARE);
+        super.getImagePanel().setNameShape("circle");
+        super.showMessageRequestInput(Constant.MESSAGE_CIRCULE_RADIUS);
+
+
 
     }
 }

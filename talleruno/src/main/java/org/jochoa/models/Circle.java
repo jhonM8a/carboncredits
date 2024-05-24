@@ -6,6 +6,10 @@ public class Circle  extends Shape{
         super(start);
         this.radius = radius;
     }
+
+    public Integer getDiameter(){
+        return radius*2;
+    }
     public int getRadius() {
         return radius;
     }
@@ -13,4 +17,6 @@ public class Circle  extends Shape{
     public void setRadius(int radius) {
         this.radius = radius;
     }
+
+
 }
