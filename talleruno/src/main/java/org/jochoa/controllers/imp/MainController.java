@@ -1,8 +1,8 @@
-package org.jochoa.controllers;
+package org.jochoa.controllers.imp;
 
-import org.jochoa.models.Line;
+import org.jochoa.constants.Constant;
+import org.jochoa.models.Circle;
 import org.jochoa.models.Point;
-import org.jochoa.models.Shape;
 import org.jochoa.models.Square;
 import org.jochoa.views.ImagePanel;
 import org.jochoa.views.MainPanel;
@@ -11,7 +11,6 @@ import org.jochoa.views.MainWindow;
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Random;
 
 public class MainController {
     MainWindow mainWindow;
@@ -20,7 +19,8 @@ public class MainController {
     public MainController(){}
     public void dibujar(){
         SquareController squareController = new SquareController();
-        //Panel para imagen
+        CircleController circleController = new CircleController();
+
         ImagePanel imagePanel = new ImagePanel();
 
 
@@ -36,9 +36,19 @@ public class MainController {
                 } else if (imagePanel.getNameShape() == null && imagePanel.getImage() != null) {
                     JOptionPane.showMessageDialog(e.getComponent(), "Plesea select a type of shape");
 
-                } else if (imagePanel.getNameShape().equals("square") || imagePanel.getNameShape().equals("circle")) {
-                    System.out.println("controller:"+imagePanel.getNameShape());
-                    squareController.mouseclickerdSquare(e, imagePanel);
+                } else if (imagePanel.getNameShape().equals("square") /*|| imagePanel.getNameShape().equals("circle")*/) {
+                    Square square = new Square(new Point(0,0),0);
+                    Point pointStart = new Point();
+                    pointStart.setX(e.getX());
+                    pointStart.setY(e.getY());
+                    squareController.draw(square, pointStart, e, imagePanel);
+
+                } else if (imagePanel.getNameShape().equals(Constant.CIRCLE)) {
+                    Circle circle = new Circle(new Point(0,0),0);
+                    Point pointStart = new Point();
+                    pointStart.setX(e.getX());
+                    pointStart.setY(e.getY());
+                    circleController.draw(circle, pointStart, e, imagePanel);
                 }
 
 

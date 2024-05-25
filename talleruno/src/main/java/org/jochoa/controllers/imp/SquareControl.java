@@ -1,4 +1,4 @@
-package org.jochoa.controllers;
+package org.jochoa.controllers.imp;
 
 import org.jochoa.models.Square;
 

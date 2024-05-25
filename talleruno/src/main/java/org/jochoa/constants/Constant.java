@@ -7,4 +7,6 @@ public class Constant {
     public static String MESSAGE_RADIUS = "Put radius";
 
     public static String MESSAGE_SIDE_SQUARE ="Please put the side square";
+
+    public static String CIRCLE = "circle";
 }

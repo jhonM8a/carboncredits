@@ -1,8 +1,6 @@
 package org.jochoa;
 
-import org.jochoa.controllers.MainController;
-import org.jochoa.models.*;
-import org.jochoa.views.MainWindow;
+import org.jochoa.controllers.imp.MainController;
 
 public class Main {
     public static void main(String[] args) {
