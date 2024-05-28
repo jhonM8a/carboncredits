@@ -1,9 +1,10 @@
 package org.jochoa.views;
 
-import org.jochoa.models.Circle;
+import org.jochoa.DAO.DrawablesDao;
+import org.jochoa.drawable.IDrawable;
+import org.jochoa.models.*;
 import org.jochoa.models.Point;
 import org.jochoa.models.Shape;
-import org.jochoa.models.Square;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,16 +18,13 @@ public class ImagePanel extends JPanel {
 
     private String nameShape;
 
-    List<Square> squareList = new ArrayList<>();
-
-    List<Circle> circleList = new ArrayList<>();
 
     List<Shape> shapeList = new ArrayList<>();
 
+   DrawablesDao drawables;
+
     private int count = 0;
     public ImagePanel(){}
-
-
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -36,24 +34,13 @@ public class ImagePanel extends JPanel {
             g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
         }
         if(nameShape != null){
-
-
-            if(shapeList !=null && count<=2){
-                for (Shape shape: shapeList) {
-                    if(shape instanceof Circle){
-                        Circle circle = (Circle) shape;
-                        g.setColor(shape.getColor());
-                        g.drawOval(circle.getStart().getX() - circle.getRadius(), circle.getStart().getY() - circle.getRadius(), circle.getDiameter(), circle.getDiameter());
-
-                    } else if (shape instanceof  Square) {
-                        Square square = (Square) shape;
-                        g.setColor(square.getColor());
-                        g.drawRect(square.getStart().getX(), square.getStart().getY(), square.getSide(), square.getSide());
-                    }
+             if (drawables!=null && count<=2) {
+                for (IDrawable drawable: drawables.getDrawables()) {
+                    drawable.draw(g);
                 }
-                if(count == 2){
-                    count = 0;
-                }
+            }
+            if(count == 2){
+                count = 0;
             }
         }
 
@@ -75,17 +62,12 @@ public class ImagePanel extends JPanel {
         return nameShape;
     }
 
-
-    public void addSquareList(Square square) {
-        this.squareList.add(square);
-    }
-
-    public void addCirculeList(Circle circle) {
-        this.circleList.add(circle);
-    }
-
     public void addShapeToList(org.jochoa.models.Shape shape){
         this.shapeList.add(shape);
+    }
+
+    public void setDrawables(DrawablesDao drawables) {
+        this.drawables = drawables;
     }
 
     public void setCount(int count) {

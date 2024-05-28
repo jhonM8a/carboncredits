@@ -13,7 +13,7 @@ public class ActionCircle extends Action{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        super.getImagePanel().setNameShape("circle");
+        super.getImagePanel().setNameShape(Constant.CIRCLE);
         super.showMessageRequestInput(Constant.MESSAGE_CIRCULE_RADIUS);
 
 

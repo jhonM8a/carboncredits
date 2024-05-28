@@ -1,9 +1,7 @@
 package org.jochoa.views;
 
+import org.jochoa.actions.*;
 import org.jochoa.actions.Action;
-import org.jochoa.actions.ActionCircle;
-import org.jochoa.actions.ActionImage;
-import org.jochoa.actions.ActionSquare;
 import org.jochoa.models.Line;
 
 import javax.swing.*;
@@ -21,22 +19,38 @@ public class MainPanel extends JPanel{
 
     ActionCircle actionCircle;
 
+    ActionsEllipse actionsEllipse;
+
+    ActionRectangle actionRectangle;
+
     BufferedImage image;
     public  MainPanel(ImagePanel imagePanel){
+        setSize(1200,800);
+
         this.actionImage = new ActionImage(imagePanel);
         this.actionSquare = new ActionSquare(imagePanel);
         this.actionCircle = new ActionCircle(imagePanel);
-        setSize(1200,800);
-        JButton myButton = new JButton("Add Image");
-        myButton.addActionListener(actionImage);
+        this.actionsEllipse = new ActionsEllipse(imagePanel);
+        this.actionRectangle = new ActionRectangle(imagePanel);
 
         JButton buttonCircle = new JButton("Add Circle");
         JButton buttonSquare = new JButton("Add Square");
+        JButton myButton = new JButton("Add Image");
+        JButton buttonEllipse = new JButton("Add Ellipse");
+        JButton buttonRectangle = new JButton("Add rectangle");
+
+
+        myButton.addActionListener(actionImage);
         buttonSquare.addActionListener(actionSquare);
         buttonCircle.addActionListener(actionCircle);
+        buttonEllipse.addActionListener(actionsEllipse);
+        buttonRectangle.addActionListener(actionRectangle);
+
         add(myButton);
         add(buttonCircle);
         add(buttonSquare);
+        add(buttonEllipse);
+        add(buttonRectangle);
 
     }
 }

@@ -1,7 +1,9 @@
 package org.jochoa.controllers.imp;
 
+import org.jochoa.DAO.DrawablesDao;
 import org.jochoa.constants.Constant;
 import org.jochoa.models.Circle;
+import org.jochoa.models.Ellipse;
 import org.jochoa.models.Point;
 import org.jochoa.models.Square;
 import org.jochoa.views.ImagePanel;
@@ -16,10 +18,19 @@ public class MainController {
     MainWindow mainWindow;
     MainPanel mainPanel;
 
+    DrawablesDao drawablesDao;
+
     public MainController(){}
     public void dibujar(){
         SquareController squareController = new SquareController();
         CircleController circleController = new CircleController();
+        EllipseController ellipseController = new EllipseController();
+        RectangleController rectangleController = new RectangleController();
+
+       if(drawablesDao==null){
+           DrawablesDao drawablesDao = new DrawablesDao();
+           this.drawablesDao = drawablesDao;
+       }
 
         ImagePanel imagePanel = new ImagePanel();
 
@@ -30,25 +41,27 @@ public class MainController {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                Point pointStart = new Point();
+                pointStart.setX(e.getX());
+                pointStart.setY(e.getY());
+
                 if(imagePanel.getNameShape() == null && imagePanel.getImage() == null){
-                    JOptionPane.showMessageDialog(e.getComponent(), "Plesea select first a image");
+                    JOptionPane.showMessageDialog(e.getComponent(), Constant.MESSAGE_IMAGE_FIRST);
 
                 } else if (imagePanel.getNameShape() == null && imagePanel.getImage() != null) {
-                    JOptionPane.showMessageDialog(e.getComponent(), "Plesea select a type of shape");
+                    JOptionPane.showMessageDialog(e.getComponent(), Constant.MESSAGE_FRIST_SELECT_SHAPE);
 
-                } else if (imagePanel.getNameShape().equals("square") /*|| imagePanel.getNameShape().equals("circle")*/) {
-                    Square square = new Square(new Point(0,0),0);
-                    Point pointStart = new Point();
-                    pointStart.setX(e.getX());
-                    pointStart.setY(e.getY());
-                    squareController.draw(square, pointStart, e, imagePanel);
+                } else if (imagePanel.getNameShape().equals(Constant.SQUARE)) {
+                    squareController.setDataAndDraw(pointStart,e,imagePanel,drawablesDao);
 
                 } else if (imagePanel.getNameShape().equals(Constant.CIRCLE)) {
-                    Circle circle = new Circle(new Point(0,0),0);
-                    Point pointStart = new Point();
-                    pointStart.setX(e.getX());
-                    pointStart.setY(e.getY());
-                    circleController.draw(circle, pointStart, e, imagePanel);
+                    circleController.setDataAndDraw(pointStart, e, imagePanel,drawablesDao);
+
+                } else if (imagePanel.getNameShape().equals(Constant.ELLIPSE)) {
+                    ellipseController.setDataAndDraw(pointStart,e,imagePanel,drawablesDao);
+
+                } else if (imagePanel.getNameShape().equals(Constant.RECTANGLE)) {
+                    rectangleController.setDataAndDraw(pointStart,e,imagePanel,drawablesDao);
                 }
 
 
