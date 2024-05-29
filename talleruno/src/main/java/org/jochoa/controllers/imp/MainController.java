@@ -32,6 +32,7 @@ public class MainController {
            this.drawablesDao = drawablesDao;
        }
 
+
         ImagePanel imagePanel = new ImagePanel();
 
 

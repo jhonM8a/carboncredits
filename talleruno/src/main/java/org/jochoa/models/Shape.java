@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Shape {
     Point start;
-    private Color color;
+    private Integer color;
 
     public Shape(Point start) {
         this.start = start;
@@ -18,11 +18,11 @@ public class Shape {
         this.start = start;
     }
 
-    public Color getColor() {
+    public Integer getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(Integer color) {
         this.color = color;
     }
 }

@@ -15,7 +15,7 @@ public class DrawableEllipse implements IDrawable{
 
     @Override
     public void draw(Graphics graphics) {
-        graphics.setColor(ellipse.getColor());
+        graphics.setColor(ellipse.getColor() == 1? Color.BLUE: Color.RED);
         graphics.drawOval(ellipse.getStart().getX(), ellipse.getStart().getY(), ellipse.getMinorAxis(), ellipse.getMajorAxis());
 
     }

@@ -78,4 +78,7 @@ public class ImagePanel extends JPanel {
         return image;
     }
 
+    public DrawablesDao getDrawables() {
+        return drawables;
+    }
 }

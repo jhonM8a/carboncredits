@@ -12,7 +12,7 @@ public class DrawableRectangle implements IDrawable{
     }
     @Override
     public void draw(Graphics graphics) {
-        graphics.setColor(rectangle.getColor());
+        graphics.setColor(rectangle.getColor() == 1 ? Color.BLUE:Color.RED);
         graphics.drawRect(rectangle.getStart().getX(), rectangle.getStart().getY(), rectangle.getWidth(), rectangle.getHeight());
     }
 }

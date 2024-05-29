@@ -18,12 +18,10 @@ public class ShapeController {
     protected void setColorAndRepaint(Shape shape, ImagePanel imagePanel) {
 
         if(this.count ==1 ){
-            shape.setColor(Color.BLUE);
-            imagePanel.addShapeToList(shape);
+            shape.setColor(1);
             imagePanel.repaint();
         } else if (this.count == 2 ) {
-            shape.setColor(Color.RED);
-            imagePanel.addShapeToList(shape);
+            shape.setColor(2);
             imagePanel.repaint();
             this.count = 0;
         }

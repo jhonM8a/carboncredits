@@ -13,7 +13,8 @@ public class DrawableCircle implements IDrawable{
 
     @Override
     public void draw(Graphics graphics) {
-        graphics.setColor(circle.getColor());
+
+        graphics.setColor(circle.getColor() == 1? Color.BLUE : Color.RED );
         graphics.drawOval(circle.getStart().getX() - circle.getRadius(), circle.getStart().getY() - circle.getRadius(), circle.getDiameter(), circle.getDiameter());
 
     }

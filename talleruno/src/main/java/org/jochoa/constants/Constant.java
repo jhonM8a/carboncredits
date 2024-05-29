@@ -5,6 +5,7 @@ public class Constant {
     public static final String MESSAGE_RECTANGLE_WITH_HIGHT = "Please, select position then height y  width";
     public static final String MESSAGE_SIDE_HEIGHT = "Please put the height ";
     public static final String MESSAGE_SIDE_WIDTH = "Please put the width";
+    public static final String SAVE = "save";
     public static String MESSAGE_SQUARE = "Please, selected one position and then select the side size";
     public static String MESSAGE_CIRCULE_RADIUS = "Please,selected one position and put the radius";
 

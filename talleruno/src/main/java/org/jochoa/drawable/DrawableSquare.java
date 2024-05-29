@@ -12,7 +12,7 @@ public class DrawableSquare implements IDrawable{
     }
     @Override
     public void draw(Graphics graphics) {
-        graphics.setColor(square.getColor());
+        graphics.setColor(square.getColor() == 1 ? Color.BLUE: Color.RED);
         graphics.drawRect(square.getStart().getX(), square.getStart().getY(), square.getSide(), square.getSide());
     }
 }

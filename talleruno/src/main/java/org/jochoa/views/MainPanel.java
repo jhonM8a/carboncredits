@@ -23,6 +23,8 @@ public class MainPanel extends JPanel{
 
     ActionRectangle actionRectangle;
 
+    ActionSaveData actionSaveData;
+
     BufferedImage image;
     public  MainPanel(ImagePanel imagePanel){
         setSize(1200,800);
@@ -32,12 +34,14 @@ public class MainPanel extends JPanel{
         this.actionCircle = new ActionCircle(imagePanel);
         this.actionsEllipse = new ActionsEllipse(imagePanel);
         this.actionRectangle = new ActionRectangle(imagePanel);
+        this.actionSaveData = new ActionSaveData(imagePanel);
 
         JButton buttonCircle = new JButton("Add Circle");
         JButton buttonSquare = new JButton("Add Square");
         JButton myButton = new JButton("Add Image");
         JButton buttonEllipse = new JButton("Add Ellipse");
         JButton buttonRectangle = new JButton("Add rectangle");
+        JButton buttonSave = new JButton("Save");
 
 
         myButton.addActionListener(actionImage);
@@ -45,12 +49,14 @@ public class MainPanel extends JPanel{
         buttonCircle.addActionListener(actionCircle);
         buttonEllipse.addActionListener(actionsEllipse);
         buttonRectangle.addActionListener(actionRectangle);
+        buttonSave.addActionListener(actionSaveData);
 
         add(myButton);
         add(buttonCircle);
         add(buttonSquare);
         add(buttonEllipse);
         add(buttonRectangle);
+        add(buttonSave);
 
     }
 }
