@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name="landowners")
 public class LandOwner {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long landowner_id;
     String name;
     String identification;
@@ -17,6 +17,9 @@ public class LandOwner {
         this.name = name;
         this.identification = indentification;
         this.phone = phone;
+    }
+
+    public LandOwner() {
     }
 
     public Long getLandowner_id() {
