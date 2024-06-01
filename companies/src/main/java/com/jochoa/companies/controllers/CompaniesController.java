@@ -34,7 +34,8 @@ public class CompaniesController {
         return "ok";
     }
 
-    @DeleteMapping
+
+    @DeleteMapping("/companies/{id}")
     public void deleteCompany(@PathVariable Long id){
 
     }
