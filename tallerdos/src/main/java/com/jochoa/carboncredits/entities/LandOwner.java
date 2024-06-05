@@ -2,6 +2,8 @@ package com.jochoa.carboncredits.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="landowners")
 public class LandOwner {
@@ -11,6 +13,9 @@ public class LandOwner {
     String name;
     String identification;
     String phone;
+
+    @OneToMany(mappedBy = "landowner_id", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<Land> lands;
 
     public LandOwner(Long landOwner, String name, String indentification, String phone) {
         this.landowner_id = landOwner;
@@ -52,5 +57,13 @@ public class LandOwner {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public List<Land> getLands() {
+        return lands;
+    }
+
+    public void setLands(List<Land> lands) {
+        this.lands = lands;
     }
 }
