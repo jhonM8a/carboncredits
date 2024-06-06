@@ -1,8 +1,11 @@
 package com.jochoa.carboncredits.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="lands")
@@ -12,12 +15,13 @@ public class Land {
     Long land_id;
 
     @ManyToOne
-    @JoinColumn(name = "landowner_id")
+    @JoinColumn(name = "landowner_id", referencedColumnName = "landowner_id")
+    @JsonBackReference
+
     LandOwner landowner_id;
     String description;
 
-    @OneToMany(mappedBy = "land", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Evaluation> evaluations;
+
     public Land() {
     }
 
@@ -45,11 +49,4 @@ public class Land {
         this.description = description;
     }
 
-    public List<Evaluation> getEvaluations() {
-        return evaluations;
-    }
-
-    public void setEvaluations(List<Evaluation> evaluations) {
-        this.evaluations = evaluations;
-    }
 }

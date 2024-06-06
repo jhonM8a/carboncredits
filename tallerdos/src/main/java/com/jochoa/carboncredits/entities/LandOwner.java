@@ -1,8 +1,10 @@
 package com.jochoa.carboncredits.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="landowners")
@@ -14,8 +16,10 @@ public class LandOwner {
     String identification;
     String phone;
 
-    @OneToMany(mappedBy = "landowner_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    List<Land> lands;
+    @OneToMany(mappedBy = "landowner_id")
+    @JsonManagedReference
+
+    Set<Land> lands;
 
     public LandOwner(Long landOwner, String name, String indentification, String phone) {
         this.landowner_id = landOwner;
@@ -59,11 +63,11 @@ public class LandOwner {
         this.phone = phone;
     }
 
-    public List<Land> getLands() {
+    public Set<Land> getLands() {
         return lands;
     }
 
-    public void setLands(List<Land> lands) {
+    public void setLands(Set<Land> lands) {
         this.lands = lands;
     }
 }

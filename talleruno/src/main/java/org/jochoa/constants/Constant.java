@@ -6,6 +6,8 @@ public class Constant {
     public static final String MESSAGE_SIDE_HEIGHT = "Please put the height ";
     public static final String MESSAGE_SIDE_WIDTH = "Please put the width";
     public static final String SAVE = "save";
+    public static final String URL_ALL_LANDS = "http://localhost:8080/lands/all";
+    public static final String GET = "GET";
     public static String MESSAGE_SQUARE = "Please, selected one position and then select the side size";
     public static String MESSAGE_CIRCULE_RADIUS = "Please,selected one position and put the radius";
 
