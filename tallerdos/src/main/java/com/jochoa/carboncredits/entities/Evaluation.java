@@ -20,7 +20,6 @@ public class Evaluation {
     @Column(nullable = false)
     private String status;
 
-    @Lob
     private String figures;
 
     public Evaluation() {
