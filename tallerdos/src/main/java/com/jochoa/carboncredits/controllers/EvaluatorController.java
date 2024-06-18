@@ -21,15 +21,8 @@ public class EvaluatorController {
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/")
-    public String  getall(){
-        System.out.println("----------->");
-        return "hola";
-    }
-
-
-@GetMapping("/hola")
-    public void testservice(){
-        System.out.println("----------------->");
+    @GetMapping("/all")
+    public List<Evaluator>  getall(){
+        return evaluatorRepository.findAll();
     }
 }
