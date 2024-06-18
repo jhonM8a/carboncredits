@@ -9,7 +9,7 @@ public class FormSaveDataWindow extends JFrame {
     public FormSaveDataWindow(FormSaveDataPanel formSaveDataPanel){
         this.formSaveDataPanel = formSaveDataPanel;
         setTitle("Form to save data");
-        setSize(400,400);
+        setSize(450,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.repaint();
         add(this.formSaveDataPanel, BorderLayout.CENTER);

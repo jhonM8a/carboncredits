@@ -2,6 +2,7 @@ package org.jochoa.controllers.imp;
 
 import org.jochoa.DAO.DrawablesDao;
 import com.google.gson.Gson;
+import org.jochoa.models.Evaluator;
 import org.jochoa.models.Land;
 import org.jochoa.service.RequestService;
 import org.jochoa.views.FormSaveDataPanel;
@@ -56,15 +57,29 @@ public class SaveController {
 
     private void sendData() {
         List<Land> lands = requestService.getLands();
+        List<Evaluator> evaluators = requestService.getEvaluators();
+
+
         DefaultComboBoxModel<String> landsCombo = new DefaultComboBoxModel<>();
         DefaultComboBoxModel<String> evaluatorCombo = new DefaultComboBoxModel<>();
+        DefaultComboBoxModel<String> stateCombo = new DefaultComboBoxModel<>();
+
 
 
         for (Land land: lands) {
             landsCombo.addElement(land.getLand_id()+"-"+land.getDescription());
         }
 
-        FormSaveDataPanel formSaveDataPanel = new FormSaveDataPanel(landsCombo,evaluatorCombo);
+        for(Evaluator evaluator: evaluators){
+            evaluatorCombo.addElement(evaluator.getEvaluator_Id()+"-"+evaluator.getName());
+
+        }
+
+        stateCombo.addElement("Creada");
+        stateCombo.addElement("Evaluada");
+
+
+        FormSaveDataPanel formSaveDataPanel = new FormSaveDataPanel(landsCombo,evaluatorCombo,stateCombo);
         FormSaveDataWindow formSaveDataWindow = new FormSaveDataWindow(formSaveDataPanel);
         formSaveDataWindow.add(formSaveDataPanel);
         formSaveDataWindow.setVisible(true);
