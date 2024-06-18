@@ -1,19 +1,9 @@
 package com.jochoa.carboncredits.services;
 
-import com.jochoa.carboncredits.dtos.LoginUserDto;
-import com.jochoa.carboncredits.dtos.RegisterUserDto;
-import com.jochoa.carboncredits.entities.User;
-import com.jochoa.carboncredits.repositories.UserRepository;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Service
+//@Service
 public class AuthenticationService {
+    /*
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
@@ -54,5 +44,5 @@ public class AuthenticationService {
         userRepository.findAll().forEach(users::add);
 
         return users;
-    }
+    }*/
 }

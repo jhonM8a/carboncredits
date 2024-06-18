@@ -1,6 +1,6 @@
 package com.jochoa.carboncredits.config;
 
-
+/*
 import com.jochoa.carboncredits.repositories.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,11 +10,11 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;*/
 
-@Configuration
+//@Configuration
 public class ApplicationConfiguration {
-    private final UserRepository userRepository;
+    /*private final UserRepository userRepository;
 
     public ApplicationConfiguration(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -44,6 +44,6 @@ public class ApplicationConfiguration {
         authProvider.setPasswordEncoder(passwordEncoder());
 
         return authProvider;
-    }
+    }*/
 }
 

@@ -1,6 +1,6 @@
 package com.jochoa.carboncredits.entities;
 
-
+/*
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -9,11 +9,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
+import java.util.List;*/
 
-@Table(name = "users")
-@Entity
-public class User implements UserDetails {
+//@Table(name = "users")
+//@Entity
+public class User /*implements UserDetails*/ {/*
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
@@ -130,7 +130,7 @@ public class User implements UserDetails {
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';
-    }
+    }*/
 }
 
 

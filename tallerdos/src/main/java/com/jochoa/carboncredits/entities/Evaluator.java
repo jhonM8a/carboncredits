@@ -11,11 +11,10 @@ public class Evaluator {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long evaluator_Id;
 
-    @Column(nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "evaluator", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Evaluation> evaluations;
+    /*@OneToMany(mappedBy = "evaluator", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Evaluation> evaluations;*/
 
     public Evaluator() {
     }
@@ -35,12 +34,12 @@ public class Evaluator {
     public void setName(String name) {
         this.name = name;
     }
-
+/*
     public List<Evaluation> getEvaluations() {
         return evaluations;
     }
 
     public void setEvaluations(List<Evaluation> evaluations) {
         this.evaluations = evaluations;
-    }
+    }*/
 }
