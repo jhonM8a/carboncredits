@@ -9,13 +9,10 @@ public class Evaluation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long evaluation_id;
 
-    @ManyToOne
-    @JoinColumn(name = "land_id")
-    private Land land;
+    private Long land_id;
 
-    @ManyToOne
-    @JoinColumn(name = "evaluator_id")
-    private Evaluator evaluator;
+    private Long evaluator_id;
+
 
     @Column(nullable = false)
     private String status;
@@ -33,22 +30,6 @@ public class Evaluation {
         this.evaluation_id = evaluation_id;
     }
 
-    public Land getLand() {
-        return land;
-    }
-
-    public void setLand(Land land) {
-        this.land = land;
-    }
-
-    public Evaluator getEvaluator() {
-        return evaluator;
-    }
-
-    public void setEvaluator(Evaluator evaluator) {
-        this.evaluator = evaluator;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -63,5 +44,21 @@ public class Evaluation {
 
     public void setFigures(String figures) {
         this.figures = figures;
+    }
+
+    public Long getLand_id() {
+        return land_id;
+    }
+
+    public void setLand_id(Long land_id) {
+        this.land_id = land_id;
+    }
+
+    public Long getEvaluator_id() {
+        return evaluator_id;
+    }
+
+    public void setEvaluator_id(Long evaluator_id) {
+        this.evaluator_id = evaluator_id;
     }
 }

@@ -3,12 +3,15 @@ package org.jochoa.service;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.jochoa.constants.Constant;
+import org.jochoa.models.Evaluation;
 import org.jochoa.models.Evaluator;
 import org.jochoa.models.Land;
 
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.lang.reflect.Type;
 import java.net.*;
 import java.net.http.HttpClient;
@@ -101,4 +104,25 @@ public class RequestService {
     }
 
 
+    public void sendPostRequest(String evaluation) {
+        prepareRequest(Constant.URL_SAVE_EVALUATIONS, Constant.POST);
+        OutputStream outputStream = null;
+        System.out.println(evaluation.toString());
+
+        try {
+            httpURLConnection.setDoOutput(true);
+            httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            outputStream = httpURLConnection.getOutputStream();
+            System.out.println(evaluation.toString());
+            outputStream.write(evaluation.getBytes());
+            outputStream.flush();
+            outputStream.close();
+            int responseCode = httpURLConnection.getResponseCode();
+            System.out.println("POST Response Code :: " + responseCode);
+
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

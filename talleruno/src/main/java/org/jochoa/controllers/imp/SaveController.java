@@ -2,6 +2,8 @@ package org.jochoa.controllers.imp;
 
 import org.jochoa.DAO.DrawablesDao;
 import com.google.gson.Gson;
+import org.jochoa.constants.Constant;
+import org.jochoa.models.Evaluation;
 import org.jochoa.models.Evaluator;
 import org.jochoa.models.Land;
 import org.jochoa.service.RequestService;
@@ -21,6 +23,8 @@ public class SaveController {
     private DrawablesDao drawablesDao;
 
     private RequestService requestService;
+
+    private String figures;
 
     private Gson json;
     public SaveController(){
@@ -42,7 +46,8 @@ public class SaveController {
 
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-            bufferedWriter.write(json.toJson(drawablesDao.getDrawables()));
+            figures = json.toJson(drawablesDao.getDrawables());
+            bufferedWriter.write(figures);
 
             bufferedWriter.close();
 
@@ -75,11 +80,11 @@ public class SaveController {
 
         }
 
-        stateCombo.addElement("Creada");
-        stateCombo.addElement("Evaluada");
+        stateCombo.addElement(Constant.CREATE);
+        stateCombo.addElement(Constant.EVALUATE);
 
 
-        FormSaveDataPanel formSaveDataPanel = new FormSaveDataPanel(landsCombo,evaluatorCombo,stateCombo);
+        FormSaveDataPanel formSaveDataPanel = new FormSaveDataPanel(landsCombo,evaluatorCombo,stateCombo, this);
         FormSaveDataWindow formSaveDataWindow = new FormSaveDataWindow(formSaveDataPanel);
         formSaveDataWindow.add(formSaveDataPanel);
         formSaveDataWindow.setVisible(true);
@@ -88,5 +93,10 @@ public class SaveController {
 
     public void setDrawablesDao(DrawablesDao drawablesDao) {
         this.drawablesDao = drawablesDao;
+    }
+
+    public void sendData(Long land, Long evaluator, String state) {
+        String dataSend = json.toJson(new Evaluation(land,evaluator,state, this.figures));
+        requestService.sendPostRequest(dataSend);
     }
 }

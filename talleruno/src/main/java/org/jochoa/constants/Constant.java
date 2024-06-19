@@ -9,6 +9,10 @@ public class Constant {
     public static final String URL_ALL_LANDS = "http://localhost:8080/lands/all";
     public static final String GET = "GET";
     public static final String URL_ALL_EVALUATORS = "http://localhost:8080/evaluators/all";
+    public static final String CREATE = "Creada";
+    public static final String EVALUATE = "Evaluada";
+    public static final String URL_SAVE_EVALUATIONS = "http://localhost:8080/evaluations/";
+    public static final String POST = "POST";
     public static String MESSAGE_SQUARE = "Please, selected one position and then select the side size";
     public static String MESSAGE_CIRCULE_RADIUS = "Please,selected one position and put the radius";
 
