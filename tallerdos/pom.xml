@@ -11,7 +11,7 @@
 	<groupId>com.jochoa.ws</groupId>
 	<artifactId>tallerdos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>carboncreditsws</name>
 	<description>taller2</description>
 	<properties>
