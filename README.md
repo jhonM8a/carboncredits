@@ -16,8 +16,9 @@ Este taller consiste en el desarrollo de una aplicación de escritorio en Java. 
 - Seleccionar y dibujar figuras geométricas para marcar áreas de bosque.
 - Calcular las áreas marcadas y guardar los resultados.
 
-![Imagen del Territorio](./images/imge import.png)
-![Imagen de datos guardados](./images/save json.png)
+![Imagen del Territorio](./images/imge import.jpeg)
+
+![Imagen de datos guardados](./images/save json.jpeg)
 
 Funcionalidades
 
