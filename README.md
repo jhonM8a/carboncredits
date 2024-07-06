@@ -43,5 +43,5 @@ Este taller se enfoca en la implementación de servicios web para la gestión de
 Este repositorio contiene el código fuente y documentación necesaria para el desarrollo y despliegue de los servicios web en Java, así como para la integración con la aplicación de escritorio del Caso 1.
 
 ![Imagen del formulario conectado a los servicio](./images/form.jpeg)
-![Imagen de la base de datos](./images/databse.jpeg)
+![Imagen de la base de datos](./images/database.jpeg)
 
