@@ -16,19 +16,16 @@ Este taller consiste en el desarrollo de una aplicación de escritorio en Java. 
 - Seleccionar y dibujar figuras geométricas para marcar áreas de bosque.
 - Calcular las áreas marcadas y guardar los resultados.
 
+
+## Uso del Repositorio
+Este repositorio contiene el código fuente y recursos necesarios para la ejecución y desarrollo de la aplicación de escritorio en Java.
+
 ![Imagen del Territorio](./images/import_image.jpeg)
 
 ![Imagen de datos guardados](./images/save_json.jpeg)
 
 ![Imagen de json](./images/view_json.jpeg)
 
-Funcionalidades
-
-Cargar una imagen del territorio.
-Seleccionar y dibujar figuras geométricas para marcar áreas de bosque.
-Calcular las áreas marcadas y guardar los resultados.
-Uso del Repositorio
-Este repositorio contiene el código fuente y recursos necesarios para la ejecución y desarrollo de la aplicación de escritorio en Java.
 
 ## Caso 2: Servicios Web para Gestión de Información
 
